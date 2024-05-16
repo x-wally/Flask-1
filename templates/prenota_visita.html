@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Registrazione Paziente{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h1>Prenotazione Visita Medica</h1>
+    <form id="bookingForm" action="/prenotazione_visita" method="POST">
+        <div class="form-group">
+            <label for="patientType">Prenotazione per:</label>
+            <select class="form-control" id="patientType" name="patientType">
+                <option value="Sè stessi">Sè stessi</option>
+                <option value="UN familiare a carico">Un familiare a carico</option>
+            </select>
+          </div>
+      <div class="form-group">
+        <label for="date">Data:</label>
+        <input type="date" class="form-control" id="date" name="date" value="2024-05-01">
+      </div>
+      <div class="form-group">
+        <label for="time">Ora:</label>
+        <input type="time" class="form-control" id="time" name="time" value="09:30">
+      </div>
+      <div class="form-group">
+        <label for="doctor">Medico:</label>
+        <select class="form-control" id="doctor" name="doctor">
+            <option value="Dott. Rossi">Dott. Rossi</option>
+            <option value="Dott. Bianchi">Dott. Bianchi</option>
+            <option value="Dott. Verdi">Dott. Verdi</option>
+            <option value="Dott.ssa Esposito">Dott.ssa Esposito</option>
+            <option value="Dott.ssa Moretti">Dott.ssa Moretti</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="regime">Regime:</label>
+        <select class="form-control" id="regime" name="regime">
+          <option value="SSN">SSN</option>
+          <option value="privato">Privato</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="urgency">Urgenza:</label>
+        <input type="range" class="form-control-range" id="urgency" name="urgency" min="0" max="5" value="1">
+      </div>
+      <button type="submit" class="btn btn-primary">Prenota</button>
+    </form>
+  </div>
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Registrazione Medico{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-5 mb-4">Registrazione Medico</h1>
+
+        <form action="/submit_registration" method="post" class="mb-5">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="username" value="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="password" value="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="cognome">Cognome:</label>
+                <input type="text" id="cognome" name="cognome" class="form-control" placeholder="cognome" value="cognome" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="nome" value="nome" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="codice_fiscale">Codice Fiscale:</label>
+                <input type="text" id="codice_fiscale" name="codice_fiscale" class="form-control" placeholder="codicefiscale" value="codicefiscale" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Specialità:</label><br>
+                <div class="form-check">
+                    <input type="checkbox" id="specialita1" name="specialita" value="Specialità 1" class="form-check-input">
+                    <label for="specialita1" class="form-check-label">Specialità 1</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="specialita2" name="specialita" value="Specialità 2" class="form-check-input">
+                    <label for="specialita2" class="form-check-label">Specialità 2</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="specialita3" name="specialita" value="Specialità 3" class="form-check-input">
+                    <label for="specialita3" class="form-check-label">Specialità 3</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="specialita4" name="specialita" value="Specialità 4" class="form-check-input">
+                    <label for="specialita4" class="form-check-label">Specialità 4</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Registrati</button>
+        </form>
+    </div>
+{% endblock %}

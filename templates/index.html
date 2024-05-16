@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione e Accesso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function mostraScelta(){
+            var scelta = document.getElementById("sceltaRuolo");
+            scelta.style.display = "block";
+        }
+        function nascondiScelta(){
+            var scelta = document.getElementById("sceltaRuolo");
+            scelta.style.display = "none";
+            mostraBottone();
+        }
+        function mostraBottone() {
+            var Bottone = document.getElementById("Bottone")
+            Bottone.style.display = "block";
+        }
+
+        function mostra(ruolo) {
+            var registrazioneButton = document.getElementById('registrazioneButton');
+            var accessoButton = document.getElementById('accessoButton');
+            if (ruolo === 'medico') {
+                registrazioneButton.innerHTML = '<a href="/registra_medico" class="btn btn-primary">Registra Medico</a>';
+                accessoButton.innerHTML = '<a href="/accesso_medico" class="btn btn-primary">Accesso Medico</a>';
+            } else if (ruolo === 'infermiere') {
+                registrazioneButton.innerHTML = '<a href="/registra_infermiere" class="btn btn-primary">Registra Infermiere</a>';
+                accessoButton.innerHTML = '<a href="/accesso_infermiere" class="btn btn-primary">Accesso Infermiere</a>';
+            } else if (ruolo === 'paziente') {
+                registrazioneButton.innerHTML = '<a href="/registra_paziente" class="btn btn-primary">Registra Paziente</a>';
+                accessoButton.innerHTML = '<a href="/accesso_paziente" class="btn btn-primary">Accesso Paziente</a>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Scegli il tuo ruolo:</h1>
+                <div id="Bottone" class="text-center" style="display: none;">
+                    <button class="btn btn-primary" onclick="mostraScelta();">Mostra Scelta</button>
+                </div>
+                <div id="sceltaRuolo" class="text-center">
+                    <button class="btn btn-primary me-2" onclick="mostra('medico'); nascondiScelta();">Medico</button>
+                    <button class="btn btn-primary me-2" onclick="mostra('infermiere'); nascondiScelta();">Infermiere</button>
+                    <button class="btn btn-primary" onclick="mostra('paziente'); nascondiScelta();">Paziente</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <div id="registrazioneButton" class="text-center"></div>
+                <div id="accessoButton" class="text-center"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
